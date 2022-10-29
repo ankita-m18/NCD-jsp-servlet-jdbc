@@ -20,7 +20,7 @@ public class RegistrationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
      
 	private RegistrationDao registrationDao;
-	
+	private long patient_id;
 	
     public void init() {
         registrationDao = new RegistrationDao();
@@ -35,7 +35,7 @@ public class RegistrationServlet extends HttpServlet {
 	
 	public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {	
 		
-		String firstname = request.getParameter("firstname");
+	String firstname = request.getParameter("firstname");
         String lastname = request.getParameter("lastname");
         String gender = request.getParameter("gender");
         aadhaar = request.getParameter("aadhaar");
@@ -54,15 +54,24 @@ public class RegistrationServlet extends HttpServlet {
         
         
         try {
-			registrationDao.registerPatient(register);
+		setPatient_id(registrationDao.registerPatient(register));
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
         
         RequestDispatcher dispatcher = request.getRequestDispatcher("/checklist.jsp");
-		dispatcher.forward(request, response);
+	request.setAttribute("patient_id", patient_id);
+	dispatcher.forward(request, response);
         
+	}
+	public long getPatient_id() {
+		return patient_id;
+	}
+
+
+	public void setPatient_id(long patient_id) {
+		this.patient_id = patient_id;
 	}
 
 }
