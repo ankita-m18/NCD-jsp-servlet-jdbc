@@ -23,7 +23,7 @@ public class ResultDao {
         
 
         try (Connection connection = DriverManager
-            .getConnection("jdbc:mysql://localhost:3306/ncddb?useSSL=false", "root", "Ankita@18Riya");
+            .getConnection("jdbc:mysql://localhost:3306/ncdjava?useSSL=false", "root", "Ankita@18Riya");
 
             //Create a statement using connection object
             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
