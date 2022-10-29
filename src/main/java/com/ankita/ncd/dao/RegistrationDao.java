@@ -11,7 +11,7 @@ public class RegistrationDao {
 
 	 public int registerPatient(Registration register) throws ClassNotFoundException {
 	        String INSERT_USERS_SQL = "INSERT INTO patientinfo" +
-	            "  (aadhaar_uid, first_name, last_name, gender, phone_no, dob, pincode) VALUES " +
+	            "  (first_name, last_name, gender, aadhaar_uid, phone_no, dob, pincode) VALUES " +
 	            " (?, ?, ?, ?, ?,?,?);";
 
 	        int result = 0;
@@ -23,10 +23,10 @@ public class RegistrationDao {
 
 	            //Create a statement using connection object
 	            PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
-	            preparedStatement.setString(1, register.getAadhaar());
-	            preparedStatement.setString(2, register.getFirstname());
-	            preparedStatement.setString(3, register.getLastname());
-	            preparedStatement.setString(4, register.getGender());
+	            preparedStatement.setString(1, register.getFirstname());
+	            preparedStatement.setString(2, register.getLastname());
+	            preparedStatement.setString(3, register.getGender());
+		    preparedStatement.setString(4, register.getAadhaar());
 	            preparedStatement.setString(5, register.getPhone());
 	            preparedStatement.setString(6, register.getBirthday());
 	            preparedStatement.setInt(7, register.getPincode());
