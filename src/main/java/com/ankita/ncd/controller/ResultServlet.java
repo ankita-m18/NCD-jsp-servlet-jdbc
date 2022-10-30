@@ -83,12 +83,12 @@ public class ResultServlet extends HttpServlet {
 
 		out.println("<tr>");
 		out.println("<td>1. What is your age? (in complete years)</td>");
-		out.println("<td>" + age + "</td> ");
+		out.println("<td style=text-align:center>" + age + "</td> ");
 		out.println("</tr>");
 
 		out.println("<tr>");
 		out.println("<td>2. Do you smoke or Consume smokeless product like Gutka or Khaini?</td>");
-		out.println("<td>" + smoke + "</td>");
+		out.println("<td style=text-align:center>" + smoke + "</td>");
 		out.println("</tr>");
 
 		out.println("<tr>");
@@ -98,18 +98,18 @@ public class ResultServlet extends HttpServlet {
 
 		out.println("<tr>");
 		out.println("<td>4. Measurement of waist in (cm)</td>");
-		out.println("<td>" + waist + "</td>");
+		out.println("<td style=text-align:center>" + waist + "</td>");
 		out.println("</tr>");
 
 		out.println("<tr>");
 		out.println("<td>5. Do you undertake any physical activities for a minimum of 150 minutes a week?</td>");
-		out.println("<td>" + phy_act + "</td>");
+		out.println("<td style=text-align:center>" + phy_act + "</td>");
 		out.println("</tr>");
 
 		out.println("<tr>");
 		out.println(
 				"<td>6. Do you have a family history (any one of your parents or siblings) of high blood pressure, diabetes and heart disease?</td>");
-		out.println("<td>" + fam_his + "</td>");
+		out.println("<td style=text-align:center>" + fam_his + "</td>");
 		out.println("</tr>");
 
 		out.println("<tr style=text-align:center>");
